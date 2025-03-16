@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/skyzmetro-cms/skyzmetro-services.skyzmetro-cms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/skyzmetro-cms/skyzmetro-services.skyzmetro-cms.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/skyzmetro-dtos/skyzmetro-services.skyzmetro-dtos.main.iml" filepath="$PROJECT_DIR$/.idea/modules/skyzmetro-dtos/skyzmetro-services.skyzmetro-dtos.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/skyzmetro-publics/skyzmetro-services.skyzmetro-publics.main.iml" filepath="$PROJECT_DIR$/.idea/modules/skyzmetro-publics/skyzmetro-services.skyzmetro-publics.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zama-dtos/zama-registrar-be.zama-dtos.main.iml" filepath="$PROJECT_DIR$/.idea/modules/zama-dtos/zama-registrar-be.zama-dtos.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zama-registrar/zama-registrar-be.zama-registrar.main.iml" filepath="$PROJECT_DIR$/.idea/modules/zama-registrar/zama-registrar-be.zama-registrar.main.iml" />
+    </modules>
+  </component>
+</project>

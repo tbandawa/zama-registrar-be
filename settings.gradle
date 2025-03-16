@@ -1,0 +1,4 @@
+rootProject.name = 'zama-registrar-be'
+
+include 'zama-dtos'
+include 'zama-registrar'
