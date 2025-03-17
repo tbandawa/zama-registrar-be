@@ -1,6 +1,7 @@
 package me.tbandawa.web.skyzmetro.services;
 
 import lombok.extern.slf4j.Slf4j;
+import me.tbandawa.web.skyzmetro.dtos.ExportDto;
 import me.tbandawa.web.skyzmetro.dtos.MemberDto;
 import me.tbandawa.web.skyzmetro.utils.ResourceType;
 import org.apache.poi.ss.usermodel.Row;
@@ -27,7 +28,9 @@ public class MembershipCardBuilderImpl implements MembershipCardBuilder {
     }
 
     @Override
-    public List<MemberDto> buildCards(List<MemberDto> memberDtoList) {
+    public ExportDto buildCards(List<MemberDto> memberDtoList) {
+
+        ExportDto exportDto = new ExportDto();
 
         try(Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet("zama_members");
@@ -62,12 +65,15 @@ public class MembershipCardBuilderImpl implements MembershipCardBuilder {
 
             }
 
-            FileOutputStream saveExcel = new FileOutputStream("files/zama_members.xlsx");
+            FileOutputStream saveExcel = new FileOutputStream("files/exports/zama_members.xlsx");
             workbook.write(saveExcel);
+
+            exportDto.setMemberDtoList(memberDtoList);
+            exportDto.setExport("files/exports/zama_members.xlsx");
 
         } catch (Exception ex) {
             log.info(ex.getLocalizedMessage());
         }
-        return memberDtoList;
+        return exportDto;
     }
 }

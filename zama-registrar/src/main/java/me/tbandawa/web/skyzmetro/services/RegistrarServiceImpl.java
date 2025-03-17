@@ -3,10 +3,7 @@ package me.tbandawa.web.skyzmetro.services;
 import me.tbandawa.web.skyzmetro.daos.MemberDao;
 import me.tbandawa.web.skyzmetro.daos.ProvinceDao;
 import me.tbandawa.web.skyzmetro.daos.UserDao;
-import me.tbandawa.web.skyzmetro.dtos.PhotoDto;
-import me.tbandawa.web.skyzmetro.dtos.MemberDto;
-import me.tbandawa.web.skyzmetro.dtos.PagedMembersDto;
-import me.tbandawa.web.skyzmetro.dtos.ProvinceDto;
+import me.tbandawa.web.skyzmetro.dtos.*;
 import me.tbandawa.web.skyzmetro.entities.Member;
 import me.tbandawa.web.skyzmetro.entities.User;
 import me.tbandawa.web.skyzmetro.exceptions.InvalidFileTypeException;
@@ -164,7 +161,7 @@ public class RegistrarServiceImpl implements RegistrarService {
     }
 
     @Override
-    public List<MemberDto> printMembers(List<Long> members) {
+    public ExportDto printMembers(List<Long> members) {
         if (members.isEmpty()) {
             throw new NotProcessedException("No members selected to print");
         }

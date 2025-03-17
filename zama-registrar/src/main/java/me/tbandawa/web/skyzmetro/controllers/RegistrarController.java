@@ -85,7 +85,7 @@ public class RegistrarController {
     @PreAuthorize("isAuthenticated()")
     @SecurityRequirement(name = "Bearer Authentication")
     @PostMapping(value = "/print", produces = "application/json")
-    public ResponseEntity<List<MemberDto>> printMembers(@RequestParam List<Long> members) {
+    public ResponseEntity<ExportDto> printMembers(@RequestParam List<Long> members) {
         return ResponseEntity.ok().body(registrarService.printMembers(members));
     }
 }

@@ -1,5 +1,6 @@
 package me.tbandawa.web.skyzmetro.services;
 
+import me.tbandawa.web.skyzmetro.dtos.ExportDto;
 import me.tbandawa.web.skyzmetro.dtos.MemberDto;
 import me.tbandawa.web.skyzmetro.dtos.PagedMembersDto;
 import org.springframework.security.core.Authentication;
@@ -14,5 +15,5 @@ public interface RegistrarService {
     List<MemberDto> searchMembers(Authentication authentication, String query);
     MemberDto editMember(Authentication authentication, MemberDto memberDto);
     MemberDto activateMember(Authentication authentication, long id, boolean active);
-    List<MemberDto> printMembers(List<Long> members);
+    ExportDto printMembers(List<Long> members);
 }
