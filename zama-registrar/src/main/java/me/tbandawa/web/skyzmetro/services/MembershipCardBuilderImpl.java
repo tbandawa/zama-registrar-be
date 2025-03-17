@@ -68,8 +68,8 @@ public class MembershipCardBuilderImpl implements MembershipCardBuilder {
             FileOutputStream saveExcel = new FileOutputStream("files/exports/zama_members.xlsx");
             workbook.write(saveExcel);
 
-            exportDto.setMemberDtoList(memberDtoList);
-            exportDto.setExport("files/exports/zama_members.xlsx");
+            exportDto.setMembers(memberDtoList);
+            exportDto.setFile("files/exports/zama_members.xlsx");
 
         } catch (Exception ex) {
             log.info(ex.getLocalizedMessage());
