@@ -105,7 +105,34 @@ public class ImageServiceImpl implements ImageService {
 		// Delete image folder using Spring's file utilities
 		FileSystemUtils.deleteRecursively(new File(resourceFolder(resourceType) + File.separatorChar + id));
 	}
-	
+
+	/**
+	 * Get image file from storage
+	 * @param id representing member
+	 * @return image file
+	 */
+	@Override
+	public File getImageFile(Long id, ResourceType resourceType) {
+
+		List<String> imageURIs;
+		File imageFile = null;
+
+		try {
+			imageURIs = Files.list(Paths.get(resourceFolder(resourceType) + File.separatorChar + id + File.separatorChar))
+					.map(Path::toFile)
+					.map(File::getPath)
+					.collect(Collectors.toList());
+			String imageURI = imageURIs.stream()
+					.filter(s  -> s.contains("photo"))
+					.findFirst()
+					.orElse(null);
+            imageFile = new File(imageURI);
+		} catch (IOException ex) {
+			System.out.println(ex);
+		}
+		return imageFile;
+	}
+
 	/**
 	 * Save image in the folder created and named using identifier. The
 	 * image name is created by appending <b>imageIndex</b> to <b>image_</b>.
