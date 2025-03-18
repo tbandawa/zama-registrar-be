@@ -12,6 +12,7 @@ import me.tbandawa.web.skyzmetro.exceptions.ResourceNotFoundException;
 import me.tbandawa.web.skyzmetro.utils.ClientSessions;
 import me.tbandawa.web.skyzmetro.utils.ResourceType;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -161,6 +162,7 @@ public class RegistrarServiceImpl implements RegistrarService {
     }
 
     @Override
+    @PreAuthorize("hasAnyAuthority('admin')")
     public ExportDto printMembers(List<Long> members) {
         if (members.isEmpty()) {
             throw new NotProcessedException("No members selected to print");
