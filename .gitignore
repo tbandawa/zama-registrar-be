@@ -39,7 +39,8 @@ out/
 .vscode/
 
 ### FILES ###
-skyzmetro-cms/build/
-skyzmetro-dtos/build/
-skyzmetro-publics/build/
+zama-registrar/build/
+zama-dtos/build/
 me.tbandawa.web.skyzmetro.entities.Member
+zama-registrar/me.tbandawa.web.skyzmetro.entities.Member
+
