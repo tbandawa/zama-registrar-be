@@ -1,0 +1,23 @@
+name: zama-services
+
+services:
+
+  database:
+    ports:
+      - 5432:5432
+    container_name: zama-postgres
+    image: postgres
+    environment:
+      - POSTGRES_DB=zamadb
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+    restart: always
+
+  server:
+    build: .
+    container_name: zama-service
+    ports:
+      - 9001:9001
+    depends_on:
+      - database
+    restart: always

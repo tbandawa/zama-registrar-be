@@ -6,6 +6,8 @@ plugins {
 
 group = 'me.tbandawa.web.skyzmetro'
 version = '0.0.1-SNAPSHOT'
+jar.archiveFileName = "zama-registrar.jar"
+bootJar.archiveFileName = "zama-registrar.jar"
 
 java {
 	sourceCompatibility = '1.8'
@@ -38,11 +40,11 @@ dependencies {
 	implementation 'joda-time:joda-time:2.3'
 	implementation 'net.coobird:thumbnailator:0.4.11'
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
-	compileOnly 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok:1.18.30'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }

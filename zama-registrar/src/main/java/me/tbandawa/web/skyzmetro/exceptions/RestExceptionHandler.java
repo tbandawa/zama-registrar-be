@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.time.LocalDateTime;
 
+import me.tbandawa.web.skyzmetro.dtos.ErrorResponse;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.MediaType;
@@ -24,8 +25,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import me.tbandawa.web.skyzmetro.dtos.ErrorResponse;
 
 @RestControllerAdvice
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE) 
